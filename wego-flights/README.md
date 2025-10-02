@@ -2,7 +2,7 @@
 
 ## Spring Boot Application: Car Park Management System
 
-A simple RESTful API built with Spring Boot for managing car parking syatem. It supports CRUD operations, pagination, and basic validation.
+A simple RESTful API built with Spring Boot for managing parking system. It supports CRUD operations, pagination, and basic validation.
 
 ---
 
@@ -34,8 +34,8 @@ A simple RESTful API built with Spring Boot for managing car parking syatem. It 
 ```
 src/
 ├── main/
-│   ├── java/com/wego/flights/     ...contain main application file
-│   │   ├── aspect/                ...contains ExceptionControllerAdvice for handlingresponse in case of exceptions
+│   ├── java/com/wego/flights/     ...contains main application file
+│   │   ├── aspect/                ...contains ExceptionControllerAdvice for handling response in case of exceptions
 │   │   ├── constants/             ...to keep constant files 
 │   │   ├── controller/            ...for controllers
 │   │   ├── entity/                ...for entities
@@ -66,6 +66,8 @@ src/
 git clone https://github.com/your-username/employee-management.git
 cd wego-flights
 
+pat token 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
+
 # Build the project
 mvn clean install
 
@@ -77,10 +79,10 @@ mvn spring-boot:run
 
 ### API Endpoints
 
-| Method | Endpoint                                                      | Description                                        |
-|--------|---------------------------------------------------------------|----------------------------------------------------|
-| GET    | `/update-parking`                                                | Update parking lot data by calling downstream api  |
-| PUT    | `/carparks/nearest?latitude=1.37326&longitude=103.897&page=1&per_page=3` | Get nearest parking details                        |
+| Method | Endpoint                                                                  | Description                                        |
+|--------|---------------------------------------------------------------------------|----------------------------------------------------|
+| GET    | `/update-parking`                                                         | Update parking lot data by calling downstream api  |
+| PUT    | `/carparks/nearest?latitude=1.37326&longitude=103.897&page=1&per_page=3`  | Get nearest parking details                        |
 
 
 ---
@@ -88,6 +90,6 @@ mvn spring-boot:run
 ### 🙋‍♂️ Author
 
 - **Sumit Kumar** – [mailto-sumit.insta91@gmail.com]
-- GitHub: [@your-username](https://github.com/your-username)
-
+- GitHub: [@PlayProCode]([https://github.com/PlayProCode/assignment])
+- Assignment: [https://github.com/PlayProCode/assignment/tree/main/wego-flights] 
 ---
