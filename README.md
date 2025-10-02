@@ -24,7 +24,7 @@ A simple RESTful API built with Spring Boot for managing parking system. It supp
 | Java 17            | Programming language            |
 | Spring Boot 3.4.10 | Backend framework               |
 | Spring Data JPA    | ORM and database access         |
-| MYSQL Database     | In-memory database              |
+| MYSQL Database     | RDBMS database              |
 | Maven              | Build and dependency management |
 
 ---
