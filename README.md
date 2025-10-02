@@ -2,7 +2,7 @@
 
 ## Spring Boot Application: Car Park Management System
 
-A simple RESTful API built with Spring Boot for managing car parking syatem. It supports CRUD operations, pagination, and basic validation.
+A simple RESTful API built with Spring Boot for managing parking system. It supports CRUD operations, pagination, and basic validation.
 
 ---
 
@@ -34,8 +34,8 @@ A simple RESTful API built with Spring Boot for managing car parking syatem. It 
 ```
 src/
 ├── main/
-│   ├── java/com/wego/flights/     ...contain main application file
-│   │   ├── aspect/                ...contains ExceptionControllerAdvice for handlingresponse in case of exceptions
+│   ├── java/com/wego/flights/     ...contains main application file
+│   │   ├── aspect/                ...contains ExceptionControllerAdvice for handling response in case of exceptions
 │   │   ├── constants/             ...to keep constant files 
 │   │   ├── controller/            ...for controllers
 │   │   ├── entity/                ...for entities
@@ -91,5 +91,5 @@ mvn spring-boot:run
 
 - **Sumit Kumar** – [mailto-sumit.insta91@gmail.com]
 - GitHub: [@PlayProCode]([https://github.com/PlayProCode/assignment])
-- Assiignment: [https://github.com/PlayProCode/assignment/tree/main/wego-flights] 
+- Assignment: [https://github.com/PlayProCode/assignment/tree/main/wego-flights] 
 ---
