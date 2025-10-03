@@ -108,12 +108,12 @@ Caching layer can be implemented for frequent queries
 Job can be made to update parking lot periodically
 Spatial Index can be used for fater queries. As of now for smaller datasets composit may work.
 
-####Security Improvements
+#### Security Improvements
 Authentication and Autherization to be applied
 Health Check & monitoring
 Audit logging
 
-####Enhancement -Business Tasks
+#### Enhancement -Business Tasks
 Live map Integration
 Push Notification
 Search by location and landmark
@@ -123,7 +123,7 @@ Filter and Short Option
 
 ### 🙋‍♂️ Author
 
-- **Sumit Kumar** – [mailto-sumit.insta91@gmail.com]
-- GitHub: [@your-username](https://github.com/your-username)
+- **Sumit Kumar** – [mailto:- sumit.insta91@gmail.com]
+- GitHub: [@PlayProCode](Assignment repo: https://github.com/PlayProCode/assignment)
 
 ---
