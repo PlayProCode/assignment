@@ -11,6 +11,8 @@ import org.springframework.context.annotation.Configuration;
 import com.wego.flights.entity.CarParkInfo;
 import com.wego.flights.repository.ParkingRepository;
 import com.wego.flights.utills.CoordinatesConvertorUtil;
+
+import lombok.extern.slf4j.Slf4j;
 /**
  * CarParkingInit class is made to initialize and feed the static data
  * when application loaded 1st time
@@ -18,6 +20,7 @@ import com.wego.flights.utills.CoordinatesConvertorUtil;
  * @author Sumit Kumar
  *
  */
+@Slf4j
 @Configuration
 public class CarParkingInit {
 
@@ -26,8 +29,10 @@ public class CarParkingInit {
 	CommandLineRunner loadData(ParkingRepository repository) {
 		return args -> {
 			//if data is not there then only static data is loaded
-			if (repository.findAll().size() != 0)
+			if (repository.findAll().size() != 0) {
+				log.info("data already updated in db!");
 				return;
+			}
 			try (BufferedReader reader = new BufferedReader(
 					new InputStreamReader(getClass().getResourceAsStream("/static/HDBCarparkInformation.csv")))) {
 				String line;
@@ -50,7 +55,9 @@ public class CarParkingInit {
 					carParkInfo.setCarParkBasement(fields[11]);
 					repository.save(carParkInfo);
 				}
+				log.info("data updated successfully fro carInfo");
 			} catch (IOException e) {
+				log.error("error while updating data in db",e);
 				e.printStackTrace();
 			}
 		};

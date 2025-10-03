@@ -18,7 +18,9 @@ import com.wego.flights.repository.ParkingRepository;
 import com.wego.flights.service.CarParkService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class CarParkServiceImpl implements CarParkService {
@@ -33,6 +35,7 @@ public class CarParkServiceImpl implements CarParkService {
 	public void fetchAndUpdateCarParkAvailability() {
 		ResponseEntity<String> response = restTemplate.getForEntity(ParkingConstants.PARKING_AVAILABLE_API_URL,
 				String.class);
+		log.info("data fetched for available lots !");
 		JSONObject json = new JSONObject(response.getBody());
 
 		JSONArray carparkData = json.getJSONArray("items").getJSONObject(0).getJSONArray("carpark_data");
@@ -75,11 +78,13 @@ public class CarParkServiceImpl implements CarParkService {
 			Integer perPage) {
 		List<CarParkInfo> carParInfos = parkingRepository.findNearestCarParks(latitude, longitude, perPage,
 				(page-1) * perPage);
+		log.info("carParInfos received from db !");
 		List<Parking> parkings = new ArrayList<Parking>();
 		for (CarParkInfo cpf : carParInfos)
 			parkings.add(new Parking(cpf.getAddress(), Double.parseDouble(cpf.getXCord()),
 					Double.parseDouble(cpf.getYCord()), Integer.parseInt(cpf.getTotalLots()),
 					Integer.parseInt(cpf.getLotsAvailable())));
+		log.info("nerest data received !");
 		return parkings;
 	}
 }

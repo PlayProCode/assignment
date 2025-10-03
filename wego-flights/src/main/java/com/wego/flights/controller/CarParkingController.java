@@ -14,6 +14,8 @@ import com.wego.flights.constants.ParkingConstants;
 import com.wego.flights.entity.Parking;
 import com.wego.flights.service.CarParkService;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * Parking controller to update and 
  * conditionally fetch the parking data
@@ -21,6 +23,7 @@ import com.wego.flights.service.CarParkService;
  * @author sumit kumar
  *
  */
+@Slf4j
 @RestController
 public class CarParkingController {
 
@@ -35,6 +38,7 @@ public class CarParkingController {
 	@PutMapping(ParkingConstants.UPDATE_PARKING_LOT_URL)
 	public ResponseEntity<String> getCarParkingAvailability() {
 		carParkService.fetchAndUpdateCarParkAvailability();
+		log.info("result updated successfully !");
 		return new ResponseEntity<String>(ParkingConstants.SUCCESSFULLY_UPDATED, HttpStatus.OK);
 	}
 	
@@ -54,8 +58,9 @@ public class CarParkingController {
 			@RequestParam(name = "longitude", required = true) Double longitude,
 			@RequestParam(name = "page", required = true) Integer page,
 			@RequestParam(name = "per_page", required = true) Integer perPage) {
-
+		log.info("Getting nearest data for latitude {}, longitude {}", latitude,longitude);
 		List<Parking> results = carParkService.fetchNearestAvailableParking(latitude, longitude, page, perPage);
+		log.info("result fetched successfully !");
 		return ResponseEntity.ok(results);
 	}
 }
